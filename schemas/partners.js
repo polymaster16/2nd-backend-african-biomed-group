@@ -1,8 +1,10 @@
 import {defineField, defineType} from 'sanity'
+import { OkHandIcon } from '@sanity/icons'
 
 export default defineType({
-  name: 'author',
-  title: 'Author',
+  name: 'partners',
+  title: 'Partners and Sponsors',
+  icon: OkHandIcon,
   type: 'document',
   fields: [
     defineField({
@@ -29,7 +31,7 @@ export default defineType({
     }),
     defineField({
       name: 'bio',
-      title: 'Bio',
+      title: 'Description',
       type: 'array',
       of: [
         {

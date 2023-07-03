@@ -1,8 +1,10 @@
 import {defineField, defineType} from 'sanity'
+import { BookIcon } from '@sanity/icons'
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'blog-post',
+  title: 'Blog Post',
+  icon:BookIcon,
   type: 'document',
   fields: [
     defineField({
@@ -20,10 +22,10 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'author',
+      name: 'teammember',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: {type: 'team'},
     }),
     defineField({
       name: 'mainImage',
@@ -33,12 +35,12 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
+    // defineField({
+    //   name: 'categories',
+    //   title: 'Categories',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: {type: 'category'}}],
+    // }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',
@@ -48,6 +50,11 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    }),
+    defineField({
+      name: 'achievement',
+      title: 'Is an achievement?',
+      type: 'boolean',
     }),
   ],
 
