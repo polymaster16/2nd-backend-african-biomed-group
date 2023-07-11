@@ -13,6 +13,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      title: 'Video file',
+      name: 'video',
+      type: 'mux.video',
+    }
+    ),
+    defineField({
       name: 'url',
       title: 'Youtube link',
       type: 'url',

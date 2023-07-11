@@ -2,6 +2,8 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
+import {muxInput} from 'sanity-plugin-mux-input'
+import {media} from 'sanity-plugin-media'
 
 export default defineConfig({
   name: 'default',
@@ -10,7 +12,7 @@ export default defineConfig({
   projectId: 'kubhsqme',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool(), muxInput({mp4_support: 'standard'}), media(),visionTool(), ],
 
   schema: {
     types: schemaTypes,
