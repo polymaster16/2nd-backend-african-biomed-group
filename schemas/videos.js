@@ -15,7 +15,7 @@ export default defineType({
     defineField({
       title: 'Video file',
       name: 'video',
-      type: 'mux.video',
+      type: 'file',
     }
     ),
     defineField({
